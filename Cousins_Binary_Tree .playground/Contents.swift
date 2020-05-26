@@ -61,15 +61,15 @@ class Solution {
         guard let parentX = findParent(root, x, 0), let parentY = findParent(root, y, 0) else {
             return false
         }
-        return (parentX.depth == parentY.depth && parentX.parent != parentY.parent)
+        return (parentX.depth == parentY.depth && parentX.value != parentY.value)
     }
     
-    func findParent(_ root: TreeNode?, _ x: Int, _ depth: Int) -> (parent: Int, depth: Int)? {
+    func findParent(_ root: TreeNode?, _ x: Int, _ depth: Int) -> (value: Int, depth: Int)? {
         
         guard let root = root else {
             return nil
         }
-        print(root.val)
+//        print(root.val)
         if root.left?.val == x || root.right?.val == x {
             return (root.val, depth)
         }
